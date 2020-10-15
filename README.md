@@ -12,6 +12,7 @@ This script is just an extension to [demon-docker](https://github.com/thirdbyte/
 
 ## Installation
 `curl -L ssjd.tk > ssj.sh && chmod +x ssj.sh && sudo ./ssj.sh`
+
 This might take half an hour to full depending upon your Internet speed. The script needs to download 3-4G of data.
 
 ## Usage
