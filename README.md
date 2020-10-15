@@ -21,6 +21,15 @@ This might take half an hour to full depending upon your Internet speed. The scr
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `chromium`, `wireshark`, etc.
 5. You can save any file in the `/root` directory inside the container and find it at `/home/ssj` on your host Linux distribution.
 
+## Screenshots
+
+**Tested on:** Ubuntu 20.04.1 LTS
+![Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_application_launcher.png)
+![Burpsuite](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_burpsuite.png)
+![Wireshark](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_wireshark.png)
+![Ettercap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_ettercap.png)
+![Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_msf_nmap.png)
+
 ## Troubleshooting
 + The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building. The only way to resolve this as of now is to wait a few hours and try again.
 
