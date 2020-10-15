@@ -47,3 +47,6 @@ This might take half an hour to full depending upon your Internet speed. The scr
 + SSJ uses docker `--privileged` capabilities and `--net=host`. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once you ext SSJ's `xfce4-terminal` is exited. This might allow any application to access the X server or GUI in particular for the time SSJ is running. This can be a security or a privacy concern for many.
 + Audio ouput does not work as of now.
 + Since the container runs with the root user, the files created in the `/root` directory have the owner set to root. On the host, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user on the host in case any data needs to be written to or deleted from this directory.
+
+## And...
+This script was created out of curiosity. This might solve a lot of problems. This might create new ones as well. It comes with no commitments. You are solely responsible for anything you may wish to do with this script. You can still feel free to file issues in case you experience any of them. Cheers!
