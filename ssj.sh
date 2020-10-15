@@ -6,12 +6,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 if ! docker --version 2>/dev/null | grep -q 'build'; then
-   echo "This script must be run with Docker installed"
+   echo "This script requires Docker to be installed"
    exit 1
 fi
 
 if ! ping 1.1.1.1 2>/dev/null | grep -q "ttl="; then
-   echo "This script must be run as root with an active Internet connection"
+   echo "This script must be run with an active Internet connection"
    exit 1
 fi
 
