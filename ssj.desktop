@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=SSJ
+Exec=/bin/bash -c "xhost +local:root && docker run --rm --shm-size=4g --workdir="/root" --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root ssj xfce4-terminal && xhost -local:root"
+Type=Application
+Icon=/usr/local/share/applications/ssj.png
