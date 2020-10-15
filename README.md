@@ -1,5 +1,5 @@
 # SSJ - Your everyday Linux distribution gone Super Saiyan.
-![ssj]()
+![ssj](https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png)
 
 ## Introduction
 SSJ is a Docker image that uses `kalilinux/kali` as the base image and installs `google-chrome`, `firefox-esr`, `sublime-text`, `tmux`, `kali-linux-large`, etc. packages. It uses the `kali.download/kali` as the mirror and `kali-last-snapshot` branch. It also allows you to run GUI applications like Burpsuite, Wireshark, Ettercap, etc. from within the container on your everyday Linux distribution. This script will build the image and create a .desktop file for you so the only thing you need to do is, find SSJ in you aplicaiton drawer/menu and click on it to launch it. An `xfce4-terminal` will popup with all your pentesting and infosec tools in it. Execute `burpsuite` to fire up the proxy, `firefox` to fire up the browser and like that, you have access to hundreds of tools that are there in Kali Linux (particularly the `kali-linux-large` package), right on your everyday Linux distribution.
