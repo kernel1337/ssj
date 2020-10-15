@@ -24,6 +24,7 @@ mkdir /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
+mkdir /usr/local/share/applications && \
 cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
 cp ssj.png /usr/local/share/applications/ssj.png && \
 cd /tmp && \
