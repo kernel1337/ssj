@@ -15,16 +15,16 @@ if ! ping 1.1.1.1 2>/dev/null | grep -q "ttl="; then
    exit 1
 fi
 
-mkdir /tmp/ssj && \
+mkdir -p /tmp/ssj && \
 cd /tmp/ssj && \
 wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/Dockerfile && \
 docker build -t ssj . && \
 wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/root/.bashrc && \
-mkdir /home/ssj && \
+mkdir -p /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
-mkdir /usr/local/share/applications && \
+mkdir -p /usr/local/share/applications && \
 cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
 cp ssj.png /usr/local/share/applications/ssj.png && \
 cd /tmp && \
