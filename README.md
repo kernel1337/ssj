@@ -21,7 +21,7 @@ This might take half an hour to full depending upon your Internet speed. The scr
 ## Usage
 1. Access the application drawer/menu on your Linux distribution to find SSJ.
 2. Launch SSJ.
-3. An `xfce4-terminal1` will pop up.
+3. An `xfce4-terminal` will pop up.
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `chromium`, `wireshark`, etc.
 5. You can save any file in the `/root` directory inside the container and find it at `/home/ssj` on your host Linux distribution.
 
