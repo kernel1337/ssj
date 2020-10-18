@@ -42,13 +42,14 @@ This might take half an hour to full depending upon your Internet speed. The scr
 ## Troubleshooting
 + The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building. The only way to resolve this as of now is to wait a few hours and try again.
 + Since the container runs with the root user, the files created in the `/root` directory have the owner set to root. On the host, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user on the host in case any data needs to be written to or deleted from this directory.
++ If the `firefox-esr`/`firefox` is executed from within the container at the time there is already an instance of it running on the host, the new instance of the Firefox Browser will be created from the `firefox-esr`/`firefox` installed on the host and not that installed inside the container. You can avoid this by renaming `default-esr` profile for the `firefox-esr`/`firefox` on your host by executing `firefox -p` and then selecting `default-esr` and renaming it to somthing else and hitting `Start Firefox`.
 
 ## Why use SSJ?
 + Requires lesser amount of disk space (around 10G) as compared to a VM.
 + Faster and more convenient than a VM.
 + Everything runs as if it is running on your host Linux distribution both in terms of performance and experience.
 + SSJ is isolated from host Linux distribution in terms of filesystem (except `/root` which is mounted from `/home/ssj` on the host) and processes. This means that whatever you do inside the SSJ container will not interfere with anything on your host Linux distribution.
-+ If the `firefox-esr`/`firefox` is executed from within the container at the time there is already an instance of it running on the host, the new instance of the Firefox Browser will be created from the `firefox-esr`/`firefox` installed on the host and not that installed inside the container. You can avoid this by renaming `default-esr` profile for the `firefox-esr`/`firefox` on your host by executing `firefox -p` and then selecting `default-esr` and renaming it to somthing else and hitting `Start Firefox`.
+
 
 ## Limitations
 + Wireless hacking tools that require a patched kernel, the one that is found in Kali Linux, will not work on SSJ. The simple reason for that is SSJ utilizes the Linux kernel of your host machine which isn't patched or modified to support packet injection.
