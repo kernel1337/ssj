@@ -42,11 +42,18 @@ This might take half an hour to full depending upon your Internet speed. The scr
 ## Troubleshooting
 + The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building. The only way to resolve this as of now is to wait a few hours and try again.
 
+## Why use SSJ?
++ Requires lesser amount of disk space (around 10G) as compared to a VM.
++ Faster and more convenient than a VM.
++ Everything runs as if it is running on your host Linux distribution both in terms of performance and experience.
++ SSJ is isolated from host Linux distribution in terms of filesystem (except `/root` which is mounted from `/home/ssj` on the host) and processes. This means that whatever you do inside the SSJ container will not interfere with anything on your host Linux distribution.
+
 ## Limitations
 + Wireless hacking tools that require a patched kernel, the one that is found in Kali Linux, will not work on SSJ. The simple reason for that is SSJ utilizes the Linux kernel of your host machine which isn't patched or modified to support packet injection.
 + SSJ uses docker `--privileged` capabilities and `--net=host`. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `xfce4-terminal` is exited. This might allow any application to access the X server or GUI in particular for the time SSJ is running which can be a security or a privacy concern for many.
 + Audio ouput does not work as of now.
 + Since the container runs with the root user, the files created in the `/root` directory have the owner set to root. On the host, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user on the host in case any data needs to be written to or deleted from this directory.
++ If the `firefox-esr` is executed from within the container at the time there is already an instance of it running it on the host, `xhost` will pop up a new window of Firefox Browser from host and not from the container. Refrain from using any browser (`google-chrome`, `chromium` and `firefox-esr`) from within container if an instance of the same browser is already running on the host.
 
 ## And...
 This script was created out of curiosity. This might solve a lot of problems. This might create new ones as well. It comes with no commitments. You are solely responsible for anything you may wish to do with this script. You can still feel free to file issues in case you experience any of them. Cheers!
