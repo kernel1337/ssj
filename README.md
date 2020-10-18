@@ -2,14 +2,14 @@
 ![ssj](https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png)
 
 ## Introduction
-SSJ is s silly little script that relies on **docker** installed on your everyday Linux distribution (Ubuntu, Debian, etc.) and magically arms it with hundreds of penetration testing and forensics tools. All of these run with almost native performance (as containers utilize the host kernel) and thus is a slightly better alternative to Virtual Machines in terms of speed, performance and convenience.
+SSJ is a silly little script that makes use of **docker** installed on your everyday Linux distribution (Ubuntu, Debian, etc.) and magically arms it with hundreds of penetration testing and forensics tools. All of these run with almost native performance (as containers utilize the host kernel) and thus is a slightly better alternative to Virtual Machines in terms of speed, performance and convenience.
 
 ## Technical Details
-SSJ is a Docker image that uses `kalilinux/kali` as the base image and installs `google-chrome`, `firefox-esr`, `sublime-text`, `tmux`, `kali-linux-large`, etc. packages. It uses the `kali.download/kali` mirror and `kali-last-snapshot` branch. It also allows you to run GUI applications like Burpsuite, Wireshark, Ettercap, etc. from within the container on your everyday Linux distribution using `--privileged` docker capabilities and `--net=host` argument. This script builds the image and creates a `.desktop` file (the Application Launcher) for you. So, the only thing you need to do is, find SSJ in you aplicaiton drawer/menu and click on it to launch it. An `xfce4-terminal` will popup with all your pentesting and infosec tools in it. Execute `burpsuite` to fire up the proxy, `firefox` to fire up the browser and like that, you have access to hundreds of tools and packages that are there in Kali Linux (particularly the `kali-linux-large` metapackage), right on your everyday Linux distribution.
+SSJ is a Docker image that uses `kalilinux/kali` as the base image and installs `google-chrome`, `firefox-esr`, `sublime-text`, `tmux`, `kali-linux-large`, etc. packages. It uses the `kali.download/kali` mirror and `kali-last-snapshot` branch. It also allows you to run GUI applications like Burpsuite, Wireshark, Ettercap, etc. from within the container on your everyday Linux distribution using `--privileged` docker capabilities and `--net=host` argument. This script builds the docker image and creates a `.desktop` file (the Application Launcher) for you. So, the only thing you need to do is, find SSJ in you aplicaiton drawer/menu and click on it to launch it. An `xfce4-terminal` will popup with all your pentesting and infosec tools in it. Execute `burpsuite` to fire up the proxy, `firefox` to fire up the browser and like that, you have access to hundreds of tools and packages that are there in Kali Linux (particularly the `kali-linux-large` metapackage), right on your everyday Linux distribution. Also, contrary to virtual machines, that are either networked behind a virtual NAT or bridged along with the host operating system, SSJ utilizes the host network stack as it is (using `--net=host`) which means that the SSJ container will have direct access to all the network interfaces as the host and will also share the same IP address.
 
 This script is just an extension to [demon-docker](https://github.com/thirdbyte/demon-docker). SSJ goes a few steps ahead to make the setup super easy and convenient for you. 
 
-## Requirements
+## Prerequisites
 + Docker (User must be in the `docker` group)
 + Internet connection
 
