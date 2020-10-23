@@ -20,6 +20,8 @@ This script is just an extension to [demon-docker](https://github.com/thirdbyte/
 
 This might take variable time depending upon your Internet speed. The script downloads around 4G of data.
 
+OR
+
 **Build Install:** (Builds the image locally)
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_build.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
