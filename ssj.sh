@@ -28,4 +28,5 @@ mkdir -p /usr/local/share/applications && \
 cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
 cp ssj.png /usr/local/share/applications/ssj.png && \
 cd /tmp && \
-rm -rf /tmp/ssj
+rm -rf /tmp/ssj && \
+rm -rf /tmp/ssj.sh
