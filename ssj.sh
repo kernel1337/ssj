@@ -30,4 +30,4 @@ cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
 cp ssj.png /usr/local/share/applications/ssj.png && \
 cd /tmp && \
 rm -rf /tmp/ssj && \
-rm -rf /tmp/ssj_quick.sh
+rm -rf /tmp/ssj.sh
