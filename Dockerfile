@@ -8,6 +8,6 @@ RUN echo "deb http://kali.download/kali kali-last-snapshot main contrib non-free
    apt-get -y autoremove && \
    apt-get -y clean && \
    rm -rf /var/lib/apt/lists/* && \
-   wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/root/.bashrc -O /root/.bashrc
+   wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc -O /root/.bashrc
 
 CMD ["/bin/bash"]
