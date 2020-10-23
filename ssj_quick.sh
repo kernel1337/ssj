@@ -20,7 +20,7 @@ cd /tmp/ssj && \
 docker pull scarfaced/demon-docker:latest && \
 docker tag scarfaced/demon-docker:latest ssj:latest && \
 docker image rm scarfaced/demon-docker:latest && \
-wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/root/.bashrc && \
+wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
