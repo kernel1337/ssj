@@ -17,9 +17,9 @@ fi
 
 mkdir -p /tmp/ssj && \
 cd /tmp/ssj && \
-wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/Dockerfile && \
+wget https://raw.githubusercontent.com/thirdbyte/ssj/main/Dockerfile && \
 docker build -t ssj . && \
-wget https://raw.githubusercontent.com/thirdbyte/demon-docker/master/root/.bashrc && \
+wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
