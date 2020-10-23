@@ -18,11 +18,13 @@ This script is just an extension to [demon-docker](https://github.com/thirdbyte/
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_quick.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
+This might take variable time depending upon your Internet speed. The script downloads around 4G of data.
+
 **Build Install:** (Builds the image locally)
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_build.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
-This might take half an hour to full depending upon your Internet speed. The script needs to download 3-4G of data.
+This might take variable time depending upon your Internet speed. The script downloads 3-4G of data and builds the image.
 
 ## Usage
 1. Access the application drawer/menu on your Linux distribution to find SSJ.
