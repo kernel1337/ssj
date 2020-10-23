@@ -48,7 +48,7 @@ This might take variable time depending upon your Internet speed. The script dow
 ![Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_msf_nmap.png)
 
 ## Troubleshooting
-+ The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building. The only way to resolve this as of now is to wait a few hours and try again.
++ The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building (**Build Install**). The only way to resolve this as of now is to either install SSJ using **Quick Install** or wait a few hours and try again.
 + Since the container runs with the root user, the files created in the `/root` directory have the owner set to root. On the host, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user on the host in case any data needs to be written to or deleted from this directory.
 + If the `firefox-esr`/`firefox` is executed from within the container at the time there is already an instance of it running on the host, the new instance of the Firefox Browser will be created from the `firefox-esr`/`firefox` installed on the host and not that installed inside the container. You can avoid this by renaming `default-esr` profile for the `firefox-esr`/`firefox` on your host by executing `firefox -p` and then selecting `default-esr` and renaming it to somthing else and hitting `Start Firefox`.
 
