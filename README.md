@@ -12,19 +12,19 @@ SSJ is a Docker image that uses [Kali Linux](https://www.kali.org/) base image,`
 + Internet connection
 
 ## Installation
-**Quick Install:** (Pulls the image from Docker Hub)
+**Quick Install:**
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_quick.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
-This might take variable time depending upon your Internet speed. The script pulls the Docker image from Docker Hub that weighs around 4G.
+This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G. This method is still faster, cetain and recommended.
 
 OR
 
-**Build Install:** (Builds the image locally)
+**Build Install:**
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_build.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
-This might take variable time depending upon your Internet speed. The script builds the image locally which requires downloading of all the packages in `kali-linux-large` metapackage weighing around 3G to 4G.
+This might take variable time depending upon your Internet speed. It builds the image locally which requires downloading of all the packages in `kali-linux-large` metapackage that weigh around 3G to 4G. This method is slower, uncertain and not recommended but might make sense in case a user does not trust pre-built Docker Hub images.
 
 ## Usage
 1. Access the application drawer/menu on your Linux distribution to find SSJ.
