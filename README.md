@@ -38,6 +38,8 @@ This might take variable time depending upon your Internet speed. It builds the 
 
 ## Screenshots
 
+**Notice**: The screenshots underneath represent `xfce4-terminal` which is now replaced with `terminator`.
+
 **Tested on:** Ubuntu 20.04.1 LTS (GNOME), Linux Mint 20 Ulyana (Cinnamon)
 
 ![Ubuntu Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_application_launcher.png)
