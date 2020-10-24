@@ -38,7 +38,7 @@ This might take variable time depending upon your Internet speed. The script dow
 
 ## Screenshots
 
-**Tested on:** Ubuntu 20.04.1 LTS
+**Tested on:** Ubuntu 20.04.1 LTS (GNOME), Linux Mint 20 (Ulyana)
 
 ![Ubuntu Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_application_launcher.png)
 
