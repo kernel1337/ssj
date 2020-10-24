@@ -40,15 +40,25 @@ This might take variable time depending upon your Internet speed. The script dow
 
 **Tested on:** Ubuntu 20.04.1 LTS
 
-![Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_application_launcher.png)
+![Ubuntu Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_application_launcher.png)
 
-![Burpsuite](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_burpsuite.png)
+![Ubuntu Burpsuite](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_burpsuite.png)
 
-![Wireshark](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_wireshark.png)
+![Ubuntu Wireshark](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_wireshark.png)
 
-![Ettercap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_ettercap.png)
+![Ubuntu Ettercap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_ettercap.png)
 
-![Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ssj_ss_msf_nmap.png)
+![Ubuntu Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_msf_nmap.png)
+
+![Mint Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_application_launcher.png)
+
+![Mint Burpsuite](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_burpsuite.png)
+
+![Mint Wireshark](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_wireshark.png)
+
+![Mint Ettercap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_ettercap.png)
+
+![Mint Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_msf_nmap.png)
 
 ## Troubleshooting
 + The Kali Linux repositories are updated very frequently. Sometimes, when the packages are being migrated to the `/kali` repository, you might get a `404` error finding some packages while the image is building (**Build Install**). The only way to resolve this as of now is to either install SSJ using **Quick Install** or wait a few hours and try again.
