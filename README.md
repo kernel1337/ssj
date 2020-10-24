@@ -33,6 +33,9 @@ This might take variable time depending upon your Internet speed. The script dow
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `wireshark`, etc.
 5. You can save any file in the `/root` directory inside the container and find it at `/home/ssj` on your host Linux distribution.
 
+## Plugins
++ [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools): A convenient script that lets you add more tools to SSJ that are not a part of the kali-linux-large metapackage.
+
 ## Screenshots
 
 **Tested on:** Ubuntu 20.04.1 LTS
