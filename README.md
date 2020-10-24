@@ -61,7 +61,7 @@ This might take variable time depending upon your Internet speed. It builds the 
 ![Mint Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_msf_nmap.png)
 
 ## Troubleshooting
-+ Being a rolling-release distribution, Kali Linux's repositories are updated very frequently. Sometimes, when the packages are being migrated to the pool, you might get a `404` error finding some packages while trying to build the image or install SSj using the Build Install command. The only way to resolve this as of now is to either wait a few hours and try again, or install SSJ using the Quick Install command.
++ Being a rolling-release distribution, Kali Linux's repositories are updated very frequently. Sometimes, when the packages are being migrated to the pool, you might get a `404` error finding some packages while trying to build the image or install SSJ using the Build Install command. The only way to resolve this as of now is to either wait a few hours and try again, or install SSJ using the Quick Install command.
 + Since the container runs with the root user privileges, the files created in the `/root` directory have the owner set to root. On the host Linux distribution, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user of the host Linux distribution in case any data needs to be written to or deleted from this directory.
 
 ## Why use SSJ?
@@ -72,9 +72,9 @@ This might take variable time depending upon your Internet speed. It builds the 
 
 
 ## Limitations
-+ Wireless hacking tools that require a patched kernel, the one that is found in Kali Linux, will not work on SSJ. The simple reason for that is SSJ utilizes the Linux kernel of your host Linux distribution which isn't patched or modified to support packet injection.
-+ SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `xfce4-terminal` is exited. This might allow any application to access the X server or GUI in particular for the time SSJ is running which can be a security or a privacy concern for many.
++ Wireless hacking tools that require a patched kernel, the one that you'd find in Kali Linux, will not work on SSJ. The simple reason for this is the fact that SSJ utilizes the Linux kernel of your host Linux distribution which isn't patched or modified to support packet injection.
++ SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `xfce4-terminal` is exited. This might allow any application to access the X server or GUI of your host Linux distribution in particular for the time SSJ is running which can be a security or a privacy concern for many.
 + Audio ouput does not work as of now.
 
 ## And...
-This script was created out of curiosity. This might solve a lot of problems. This might create new ones as well. It comes with no commitments. You are solely responsible for anything you may wish to do with this script. You can still feel free to file issues in case you experience any of them. Cheers!
+This script was created out of curiosity. This might solve a lot of problems. This might create new ones as well. It comes with no commitments whatsoever. You may do anything you wish to do with this script and are solely responsible for it. You can still feel free to file issues in case you experience any of them. Cheers!
