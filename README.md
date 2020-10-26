@@ -16,7 +16,7 @@ SSJ is a Docker image that uses [Kali Linux](https://www.kali.org/) base image,`
 
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_quick.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
-This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G. This method is still faster, cetain and recommended.
+This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G. This method is fast, certain and recommended.
 
 OR
 
@@ -33,14 +33,11 @@ This might take variable time depending upon your Internet speed. It builds the 
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `wireshark`, etc.
 5. You can save any file in the `/root` directory inside the container and find it at `/home/ssj` on your host Linux distribution.
 
-## Plugins
-+ [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools): A convenient script that lets you add more tools to SSJ that are not a part of the `kali-linux-large` metapackage.
-
 ## Screenshots
 
-**Notice**: The screenshots underneath represent `xfce4-terminal` which is now replaced with `terminator`.
-
 **Tested on:** Ubuntu 20.04.1 LTS (GNOME), Linux Mint 20 Ulyana (Cinnamon)
+
+**Notice**: The screenshots underneath represent `xfce4-terminal` which is now replaced with `terminator`.
 
 ![Ubuntu Application Launcher](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/ubuntu_ssj_application_launcher.png)
 
@@ -62,16 +59,15 @@ This might take variable time depending upon your Internet speed. It builds the 
 
 ![Mint Metasploit & Nmap](https://raw.githubusercontent.com/thirdbyte/ssj/main/screenshots/mint_ssj_msf_nmap.png)
 
+## Plugins
++ [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools): A convenient script that lets you add more tools to SSJ that are not a part of the `kali-linux-large` metapackage.
+
+## Updates
+Redo the [installation](https://github.com/thirdbyte/ssj#installation) and if you are using [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools) plugin, you'll need to re-execute the `add-tools` script as well.
+
 ## Troubleshooting
 + Being a rolling-release distribution, Kali Linux's repositories are updated very frequently. Sometimes, when the packages are being migrated to the pool, you might get a `404` error finding some packages while trying to build the image or install SSJ using the Build Install command. The only way to resolve this as of now is to either wait a few hours and try again, or install SSJ using the Quick Install command.
 + Since the container runs with the root user privileges, the files created in the `/root` directory have the owner set to root. On the host Linux distribution, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user of the host Linux distribution in case any data needs to be written to or deleted from this directory.
-
-## Why use SSJ?
-+ Requires lesser amount of disk space (around 10G) as compared to a VM.
-+ Faster and more convenient than a VM.
-+ Everything runs as if it is running on your host Linux distribution both in terms of performance and experience.
-+ SSJ is isolated from host Linux distribution in terms of filesystem (except `/root` which is mounted from `/home/ssj` on the host Linux distribution) and processes. This means that whatever you do inside the SSJ container will not interfere with anything on your host Linux distribution.
-
 
 ## Limitations
 + Wireless hacking tools that require a patched kernel, the one that you'd find in Kali Linux, will not work on SSJ. The simple reason for this is the fact that SSJ utilizes the Linux kernel of your host Linux distribution which isn't patched or modified to support packet injection.
