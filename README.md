@@ -63,7 +63,7 @@ This might take variable time depending upon your Internet speed. It builds the 
 + [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools): A convenient script that lets you add more tools to SSJ that are not a part of the `kali-linux-large` metapackage.
 
 ## Updates
-Redo the [installation](https://github.com/thirdbyte/ssj#installation) and if you are using [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools) plugin, you'll need to re-execute the `add-tools` script as well.
+Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't need to update it until a new snapshot version (`2020.1`, `2020.2`, `2020.3`, etc.) of Kali Linux gets released. Once, a new version gets released, redo the [installation](https://github.com/thirdbyte/ssj#installation) and if you are using [Add Tools](https://github.com/thirdbyte/ssj-plugin-add-tools) plugin, you'll need to re-execute the `add-tools` script as well.
 
 ## Troubleshooting
 + Being a rolling-release distribution, Kali Linux's repositories are updated very frequently. Sometimes, when the packages are being migrated to the pool, you might get a `404` error finding some packages while trying to build the image or install SSJ using the Build Install command. The only way to resolve this as of now is to either wait a few hours and try again, or install SSJ using the Quick Install command.
