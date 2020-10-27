@@ -18,7 +18,6 @@ fi
 mkdir -p /tmp/ssj && \
 cd /tmp/ssj && \
 docker pull scarfaced/ssj:latest && \
-docker tag scarfaced/ssj:latest ssj:latest && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
