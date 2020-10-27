@@ -18,7 +18,7 @@ fi
 mkdir -p /tmp/ssj && \
 cd /tmp/ssj && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/Dockerfile && \
-docker build -t ssj . && \
+docker build -t scarfaced/ssj:latest . && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p /home/ssj && \
 cp .bashrc /home/ssj/.bashrc && \
