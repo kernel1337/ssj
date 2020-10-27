@@ -20,7 +20,7 @@ cd /tmp/ssj && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/Dockerfile && \
 docker build -t ssj:latest . 
 
-docker image rm $(docker images -a -q --filter "dangling=true") &>/dev/null
+docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
 
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p /home/ssj && \
