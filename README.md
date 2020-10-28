@@ -16,19 +16,9 @@ SSJ pulls/buils a Docker image that uses [Kali Linux](https://www.kali.org/) bas
 
 ## Installation
 
-**Quick Install:**
-
 `wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_quick.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
-This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G. This method is fast, certain and recommended.
-
-OR
-
-**Build Install:**
-
-`wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_build.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
-
-This might take variable time depending upon your Internet speed. It builds the image locally which requires downloading of all the packages in `kali-linux-large` metapackage that weigh around 3G to 4G. This method is slower, uncertain and not recommended but might make sense in case a user does not trust pre-built Docker Hub images.
+This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G.
 
 ## Usage
 
@@ -74,7 +64,6 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Troubleshooting
 
-+ Being a rolling-release distribution, Kali Linux's repositories are updated very frequently. Sometimes, when the packages are being migrated to the pool, you might get a `404` error finding some packages while trying to build the image or install SSJ using the Build Install command. The only way to resolve this as of now is to either wait a few hours and try again, or install SSJ using the Quick Install command.
 + Since the container runs with the root user privileges, the files created in the `/root` directory have the owner set to root. On the host Linux distribution, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user of the host Linux distribution in case any data needs to be written to or deleted from this directory.
 
 ## Limitations
