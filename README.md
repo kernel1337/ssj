@@ -16,7 +16,7 @@ SSJ pulls/buils a Docker image that uses [Kali Linux](https://www.kali.org/) bas
 
 ## Installation
 
-`wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj_quick.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
+`wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.sh -O /tmp/ssj.sh && chmod +x /tmp/ssj.sh && sudo /tmp/./ssj.sh`
 
 This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G.
 
