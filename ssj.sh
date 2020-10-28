@@ -31,7 +31,7 @@ mkdir -p /usr/local/share/applications && \
 cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
 cp ssj.png /usr/local/share/applications/ssj.png && \
 mkdir -p /usr/local/bin && \
-echo "xhost +local:root && docker run --rm --shm-size=4g --workdir="/root" --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root ssj:latest terminator && xhost -local:root" > /usr/local/bin/ssj && \
+echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root ssj:latest terminator && xhost -local:root" > /usr/local/bin/ssj && \
 chmod +x /usr/local/bin/ssj && \
 cd /tmp && \
 rm -rf /tmp/ssj && \
