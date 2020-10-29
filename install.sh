@@ -33,5 +33,4 @@ mkdir -p /usr/local/bin && \
 echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > /usr/local/bin/ssj && \
 chmod +x /usr/local/bin/ssj && \
 cd /tmp && \
-rm -rf /tmp/ssj && \
-rm -rf /tmp/ssj/install.sh
+rm -rf /tmp/ssj
