@@ -72,6 +72,10 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 + SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `terminator` is exited. This might allow any application to access the X server or GUI of your host Linux distribution in particular for the time SSJ is running which can be a security or a privacy concern for many.
 + Audio ouput does not work as of now.
 
+## Uninstallation
+
+`mkdir -p /tmp/ssj && wget https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh -O /tmp/ssj/uninstall.sh && chmod +x /tmp/ssj/uninstall.sh && sudo /tmp/ssj/./uninstall.sh`
+
 ## And...
 
 This script was created out of curiosity. This might solve a lot of problems. This might create new ones as well. It comes with no commitments whatsoever. You may do anything you wish to do with this script and are solely responsible for it. You can still feel free to file issues in case you experience any of them. Cheers!
