@@ -34,4 +34,4 @@ echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostn
 chmod +x /usr/local/bin/ssj && \
 cd /tmp && \
 rm -rf /tmp/ssj && \
-rm -rf /tmp/ssj.sh
+rm -rf /tmp/ssj/install.sh
