@@ -16,7 +16,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 ## Installation
 
-`mkdir -p /tmp/ssj && wget https://raw.githubusercontent.com/thirdbyte/ssj/main/install.sh -O /tmp/ssj/install.sh && chmod +x /tmp/ssj/install.sh && sudo /tmp/ssj/./install.sh`
+`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/install.sh | sudo bash`
 
 This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G.
 
@@ -74,7 +74,7 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Uninstallation
 
-`mkdir -p /tmp/ssj && wget https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh -O /tmp/ssj/uninstall.sh && chmod +x /tmp/ssj/uninstall.sh && sudo /tmp/ssj/./uninstall.sh`
+`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh | sudo bash`
 
 ## And...
 
