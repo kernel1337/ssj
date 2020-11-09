@@ -19,7 +19,8 @@ apt-get install -y \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common && \
+    software-properties-common \
+    wget && \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
 add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -51,3 +52,7 @@ echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostn
 chmod +x /usr/local/bin/ssj && \
 cd /tmp && \
 rm -rf /tmp/ssj
+echo ""
+echo "=========================================================================="
+echo "You Ubuntu has successfully gone Super Sayian! Reboot to see it in action."
+echo "=========================================================================="
