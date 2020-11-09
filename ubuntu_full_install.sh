@@ -53,6 +53,6 @@ chmod +x /usr/local/bin/ssj && \
 cd /tmp && \
 rm -rf /tmp/ssj
 echo ""
-echo "=========================================================================="
-echo "You Ubuntu has successfully gone Super Sayian! Reboot to see it in action."
-echo "=========================================================================="
+echo "==========================================================================="
+echo "Your Ubuntu has successfully gone Super Saiyan! Reboot to see it in action."
+echo "==========================================================================="
