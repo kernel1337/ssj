@@ -22,15 +22,16 @@ docker pull scarfaced/ssj:latest
 docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
 
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
-mkdir -p /home/ssj && \
-cp .bashrc /home/ssj/.bashrc && \
+mkdir -p $HOME/.ssj && \
+cp .bashrc $HOME/.ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
-mkdir -p /usr/local/share/applications && \
-cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
-cp ssj.png /usr/local/share/applications/ssj.png && \
-mkdir -p /usr/local/bin && \
-echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > /usr/local/bin/ssj && \
-chmod +x /usr/local/bin/ssj && \
+mkdir -p $HOME/.local/share/applications && \
+cp ssj.desktop $HOME/.local/share/applications/ssj.desktop && \
+cp ssj.png $HOME/.local/share/applications/ssj.png && \
+mkdir -p $HOME/.local/bin && \
+echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > $HOME/.local/bin/ssj && \
+chmod +x $HOME/.local/bin/ssj && \
+echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
 cd /tmp && \
 rm -rf /tmp/ssj
