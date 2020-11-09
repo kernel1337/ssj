@@ -73,7 +73,8 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Uninstallation
 
-`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh | bash`
+1. `curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh | bash`
+2. `sudo rm -rf $HOME/.ssj/`
 
 ## And...
 
