@@ -17,10 +17,7 @@ fi
 
 mkdir -p /tmp/ssj && \
 cd /tmp/ssj && \
-docker pull scarfaced/ssj:latest
-
-docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
-
+docker pull scarfaced/ssj:latest && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p $HOME/.ssj && \
 cp .bashrc $HOME/.ssj/.bashrc && \
@@ -35,9 +32,9 @@ echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostn
 chmod +x $HOME/.local/bin/ssj && \
 echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
 cd /tmp && \
-rm -rf /tmp/ssj
-
-echo ""
-echo "================================================================================================"
-echo "Your everyday Linux distribution has successfully gone Super Saiyan! Reboot to see it in action."
-echo "================================================================================================"
+rm -rf /tmp/ssj && \
+echo "" && \
+echo "================================================================================================" && \
+echo "Your everyday Linux distribution has successfully gone Super Saiyan! Reboot to see it in action." && \
+echo "================================================================================================" && \
+docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
