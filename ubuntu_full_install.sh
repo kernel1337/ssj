@@ -13,6 +13,7 @@ fi
 DOCKUSER=$(cat /etc/passwd | grep 1000 | cut -d":" -f1)
 
 apt-get update && \
+apt-get dist-upgrade -y && \
 apt-get install -y \
     apt-transport-https \
     ca-certificates \
@@ -25,7 +26,9 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable" && \
 apt-get update && \
-apt-get install docker-ce docker-ce-cli containerd.io
+apt-get install -y docker-ce docker-ce-cli containerd.io && \
+apt-get autoremove -y && \
+apt-get clean -y
 
 usermod -aG docker $DOCKUSER
 
