@@ -1,7 +1,12 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+if ! docker --version 2>/dev/null | grep -q 'build'; then
+   echo "Docker is not installed. Terminating..."
+   exit 1
+fi
+
+if ! groups | grep -q "docker"; then
+   echo "The user '$USER' is not present in the 'docker' group. Terminating..."
    exit 1
 fi
 
