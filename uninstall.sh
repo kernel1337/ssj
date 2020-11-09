@@ -15,5 +15,6 @@ docker image rm ssj:latest &>/dev/null
 docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
 rm -rf $HOME/.ssj &>/dev/null
 rm -rf $HOME/.local/bin/ssj &>/dev/null
-rm -rf $HOME/.local/share/applications/ssj.* &>/dev/null
+rm -rf $HOME/.local/share/applications/ssj.desktop &>/dev/null
+rm -rf $HOME/.icons/ssj.png &>/dev/null
 rm -rf /tmp/ssj &>/dev/null
