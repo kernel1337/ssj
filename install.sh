@@ -36,5 +36,5 @@ rm -rf /tmp/ssj && \
 echo "" && \
 echo "================================================================================================" && \
 echo "Your everyday Linux distribution has successfully gone Super Saiyan! Reboot to see it in action." && \
-echo "================================================================================================" && \
+echo "================================================================================================"
 docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
