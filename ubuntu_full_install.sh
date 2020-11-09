@@ -43,16 +43,18 @@ wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
 mkdir -p $HOME/.ssj && \
 cp .bashrc $HOME/.ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
-wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
 mkdir -p $HOME/.local/share/applications && \
 cp ssj.desktop $HOME/.local/share/applications/ssj.desktop && \
-cp ssj.png $HOME/.local/share/applications/ssj.png && \
+wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
+mkdir -p $HOME/.icons && \
+cp ssj.png $HOME/.icons/ssj.png && \
 mkdir -p $HOME/.local/bin && \
 echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > $HOME/.local/bin/ssj && \
 chmod +x $HOME/.local/bin/ssj && \
 echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
 cd /tmp && \
 rm -rf /tmp/ssj
+
 echo ""
 echo "==========================================================================="
 echo "Your Ubuntu has successfully gone Super Saiyan! Reboot to see it in action."
