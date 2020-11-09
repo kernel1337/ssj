@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo "UID 0 is required. Terminating..." 
    exit 1
 fi
 
 if ! ping 1.1.1.1 2>/dev/null | grep -q "ttl="; then
-   echo "This script must be run with an active Internet connection"
+   echo "Could not connect to the Internet. Terminating..."
    exit 1
 fi
 
@@ -21,7 +21,7 @@ apt-get install -y \
     gnupg-agent \
     software-properties-common \
     wget && \
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
 add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
@@ -40,16 +40,17 @@ docker pull scarfaced/ssj:latest
 docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
 
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
-mkdir -p /home/ssj && \
-cp .bashrc /home/ssj/.bashrc && \
+mkdir -p $HOME/.ssj && \
+cp .bashrc $HOME/.ssj/.bashrc && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
 wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
-mkdir -p /usr/local/share/applications && \
-cp ssj.desktop /usr/local/share/applications/ssj.desktop && \
-cp ssj.png /usr/local/share/applications/ssj.png && \
-mkdir -p /usr/local/bin && \
-echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v /home/ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > /usr/local/bin/ssj && \
-chmod +x /usr/local/bin/ssj && \
+mkdir -p $HOME/.local/share/applications && \
+cp ssj.desktop $HOME/.local/share/applications/ssj.desktop && \
+cp ssj.png $HOME/.local/share/applications/ssj.png && \
+mkdir -p $HOME/.local/bin && \
+echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > $HOME/.local/bin/ssj && \
+chmod +x $HOME/.local/bin/ssj && \
+echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
 cd /tmp && \
 rm -rf /tmp/ssj
 echo ""
