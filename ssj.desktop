@@ -2,4 +2,4 @@
 Name=SSJ
 Exec=ssj
 Type=Application
-Icon=/usr/local/share/applications/ssj.png
+Icon=ssj.png
