@@ -16,7 +16,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 ## Installation
 
-`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/install.sh | sudo bash`
+`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/install.sh | bash`
 
 This might take variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 4G.
 
@@ -26,7 +26,7 @@ This might take variable time depending upon your Internet speed. It pulls the D
 2. Launch SSJ.
 3. A `terminator` terminal will pop up.
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `wireshark`, etc.
-5. You can save any file in the `/root` directory inside the container and find it at `/home/ssj` on your host Linux distribution.
+5. You can save any file in the `/root` directory inside the container and find it at `$HOME/.ssj` on your host Linux distribution.
 
 ## Screenshots
 
@@ -64,7 +64,7 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Troubleshooting
 
-+ Since the container runs with the root user privileges, the files created in the `/root` directory have the owner set to root. On the host Linux distribution, this directory is `/home/ssj`. All the files and sub directories inside `/home/ssj` will require the root user of the host Linux distribution in case any data needs to be written to or deleted from this directory.
++ Since the container runs with the root user privileges, the files created in the `/root` directory have the owner set to root. On the host Linux distribution, this directory is `$HOME/.ssj`. All the files and sub directories inside `$HOME/.ssj` will require the root user of the host Linux distribution in case any data needs to be written to or deleted from this directory.
 
 ## Limitations
 
@@ -73,7 +73,7 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Uninstallation
 
-`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh | sudo bash`
+`curl -sL https://raw.githubusercontent.com/thirdbyte/ssj/main/uninstall.sh | bash`
 
 ## And...
 
