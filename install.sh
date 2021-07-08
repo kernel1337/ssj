@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
 mkdir -p $HOME/.icons && \
 cp ssj.png $HOME/.icons/ssj.png && \
 mkdir -p $HOME/.local/bin && \
-echo "xhost +local:root && docker run --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && xhost -local:root" > $HOME/.local/bin/ssj && \
+echo "xhost +local:root && docker run --init --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && if ! ps aux | grep '[d]ocker' | grep -q 'ssj'; then xhost -local:root; fi" > $HOME/.local/bin/ssj && \
 chmod +x $HOME/.local/bin/ssj && \
 echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
 cd /tmp && \
