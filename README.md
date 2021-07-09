@@ -21,6 +21,8 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 (This takes variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 5GB.)
 
++ `sudo chown -R 0:0 $HOME/.ssh`
+
 + Reboot.
 
 ## Usage
@@ -29,7 +31,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 2. Launch SSJ.
 3. A `terminator` terminal will pop up.
 4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `wireshark`, etc.
-5. You can save any file in the `/root` directory inside the container and find it at `$HOME/.ssj` on your host Linux distribution.
+5. You can save any file in the `/root/` directory inside the container and find it at `$HOME/.ssj` on your host Linux distribution.
 
 ## Screenshots
 

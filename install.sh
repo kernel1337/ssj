@@ -1,40 +1,66 @@
 #!/bin/bash
 
-if ! docker --version 2>/dev/null | grep -q 'build'; then
-   echo "Docker is not installed. Terminating..."
-   exit 1
-fi
+function check {
 
-if ! groups | grep -q "docker"; then
-   echo "The user '$USER' is not present in the 'docker' group. Terminating..."
-   exit 1
-fi
+    if ! docker --version >/dev/null; then
+        echo "Docker is not installed. Terminating..."
+        exit 1
+    fi
 
-if ! ping 1.1.1.1 2>/dev/null | grep -q "ttl="; then
-   echo "Could not connect to the Internet. Terminating..."
-   exit 1
-fi
+    if ! groups | grep -q "docker"; then
+        echo "The user '$USER' is not present in the 'docker' group. Terminating..."
+        exit 1
+    fi
 
-mkdir -p /tmp/ssj && \
-cd /tmp/ssj && \
+    if ! git --version >/dev/null; then
+        echo "Git is not installed. Terminating..."
+        exit 1
+    fi
+
+    if ! ping -q -c 1 -W 1 github.com >/dev/null; then
+        echo "Could not connect to the Internet. Terminating..."
+        exit 1
+    fi
+
+}
+
+function init_dir {
+
+    mkdir -p $HOME/.ssj
+    mkdir -p $HOME/.local/bin
+    mkdir -p $HOME/.local/share/applications
+    mkdir -p $HOME/.local/share/icons
+
+}
+
+function cp_files {
+
+    cp -r /tmp/ssj/home/. $HOME/.ssj/
+    cp /tmp/ssj/files/ssj $HOME/.local/bin/
+    cp /tmp/ssj/files/ssj.desktop $HOME/.local/share/applications/
+    cp /tmp/ssj/files/ssj.png $HOME/.local/share/icons/
+
+}
+
+function add_path {
+
+    if ! echo $PATH | grep -q "$HOME/.local/bin"; then
+        echo 'export PATH=$HOME/.local/bin:$PATH' >> $HOME/.bashrc
+        source $HOME/.bashrc
+    fi
+
+}
+
+check
+
 docker pull scarfaced/ssj:latest && \
-wget https://raw.githubusercontent.com/thirdbyte/ssj/main/.bashrc && \
-mkdir -p $HOME/.ssj && \
-cp .bashrc $HOME/.ssj/.bashrc && \
-wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.desktop && \
-mkdir -p $HOME/.local/share/applications && \
-cp ssj.desktop $HOME/.local/share/applications/ssj.desktop && \
-wget https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png && \
-mkdir -p $HOME/.icons && \
-cp ssj.png $HOME/.icons/ssj.png && \
-mkdir -p $HOME/.local/bin && \
-echo "xhost +local:root && docker run --init --rm --shm-size=4g --workdir=/root --hostname=ssj --net=host --privileged -e DISPLAY -v $HOME/.ssj:/root scarfaced/ssj:latest terminator && if ! ps aux | grep '[d]ocker' | grep -q 'ssj'; then xhost -local:root; fi" > $HOME/.local/bin/ssj && \
+git clone https://github.com/thirdbyte/ssj /tmp/ssj && \
+init_dir && \
+cp_files && \
 chmod +x $HOME/.local/bin/ssj && \
-echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc && \
-cd /tmp && \
+add_path && \
 rm -rf /tmp/ssj && \
 echo "" && \
-echo "================================================================================================" && \
-echo "Your everyday Linux distribution has successfully gone Super Saiyan! Reboot to see it in action." && \
-echo "================================================================================================"
+echo "Installation successful! Please reboot."
+
 docker image rm $(docker images -q --filter "dangling=true") &>/dev/null
