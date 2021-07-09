@@ -75,6 +75,7 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 + SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. These are known to introduce security risks in production environments. SSJ also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `terminator` is exited. This might allow any application to access the X server or GUI of your host Linux distribution in particular for the time SSJ is running which can be a security or a privacy concern for many.
 + Audio input/ouput does not work as of now.
++ SSJ is a preconfigured & immutable toolkit, which means that any changes made to the filesystem (except `/root/`) will not persist. For creating mutable & customized containers, check out [kalipod](https://github.com/thirdbyte/kalipod).
 
 ## Uninstallation
 
