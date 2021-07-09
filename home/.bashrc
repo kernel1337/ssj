@@ -130,3 +130,4 @@ if ! shopt -oq posix; then
 fi
 
 PATH=$HOME/bin:$HOME/.local/bin:$PATH
+alias burpsuite='java -jar /usr/bin/burpsuite'
