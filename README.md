@@ -1,6 +1,6 @@
 # SSJ - Your everyday Linux distribution gone Super Saiyan.
 
-![ssj](https://raw.githubusercontent.com/thirdbyte/ssj/main/ssj.png)
+![ssj](https://raw.githubusercontent.com/thirdbyte/ssj/main/files/ssj.png)
 
 ## Introduction
 
