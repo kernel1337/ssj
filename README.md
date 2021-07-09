@@ -4,11 +4,11 @@
 
 ## Introduction
 
-SSJ is a silly little script that makes use of [Docker](https://www.docker.com/) installed on your everyday Linux distribution (Ubuntu, Debian, etc.) and magically arms it with hundreds of penetration testing and forensics tools.
+SSJ is a silly little script that makes use of [Docker](https://www.docker.com/) installed on your everyday Linux distribution (Ubuntu, Debian, etc.) and magically arms it with hundreds of penetration testing and forensic tools.
 
 ## Technical Details
 
-SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base image,`kalilinux/kali` with `kali-linux-large` and `kali-linux-headless` metapackages installed over it. It uses the `kali.download/kali` mirror and `kali-last-snapshot` branch. With SSJ, you can run GUI applications like Burpsuite, Wireshark, Ettercap, etc. from within the container on your everyday Linux distribution, thanks to `--privileged` container capabilities and `xhost` universal access control. This script creates a `.desktop` file (the Application Launcher) for you that initiates the `docker run` command to run the container. So, the only thing you need to do is, find SSJ in your applicaiton drawer or menu and click on it to launch it. A `terminator` window will popup with all your pentesting and forensics tools in it. Execute `burpsuite` to fire up the proxy, `wireshark` to fire up the packet analyzer and like that, you have access to hundreds of tools and packages that are there in Kali Linux (particularly the `kali-linux-large` and `kali-linux-headless` metapackages), right on your everyday Linux distribution. Also, contrary to virtual machines, that are either networked behind a virtual NAT or bridged along with the host operating system, SSJ utilizes the host network namespace as it is, using `--net=host`, which means that the SSJ container will have direct access to all the network interfaces as the host Linux distribution and will also share the same IP addresses.
+SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base image,`kalilinux/kali` with `kali-linux-large` and `kali-linux-headless` metapackages installed over it. It uses the `kali.download/kali` mirror and `kali-last-snapshot` branch. With SSJ, you can run GUI applications like Burpsuite, Wireshark, Ettercap, etc. from within the container on your everyday Linux distribution, thanks to `--privileged` container capabilities and `xhost` universal access control. This script creates a `.desktop` file (the Application Launcher) for you that initiates the `docker run` command to run the container. So, the only thing you need to do is, find SSJ in your applicaiton drawer or menu and click on it to launch it. A `terminator` window will popup with all your pentesting and forensics tools in it. Execute `gui burpsuite` to fire up the proxy, `gui wireshark` to fire up the packet analyzer and like that, you have access to hundreds of tools and packages that are there in Kali Linux (particularly the `kali-linux-large` and `kali-linux-headless` metapackages), right on your everyday Linux distribution. Also, contrary to virtual machines, that are either networked behind a virtual NAT or bridged along with the host operating system, SSJ utilizes the host network namespace as it is, using `--net=host`, which means that the SSJ container will have direct access to all the network interfaces as the host Linux distribution and will also share the same IP addresses.
 
 ## Prerequisites
 + Internet.
@@ -30,7 +30,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 1. Access the application drawer/menu on your Linux distribution to find SSJ.
 2. Launch SSJ.
 3. A `terminator` terminal will pop up.
-4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `burpsuite`, `wireshark`, etc.
+4. Use this terminal to launch any tool by executing them using their respective package names. For an example: `msfconsole`, `gui burpsuite`, `gui wireshark`, etc.
 5. You can save any file in the `/root/` directory inside the container and find it at `$HOME/.ssj` on your host Linux distribution.
 
 ## Screenshots
@@ -73,8 +73,8 @@ Since SSJ uses `kali-last-snapshot` branch of Kali Linux repositories, you don't
 
 ## Limitations
 
-+ SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. It also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `terminator` is exited. This might allow any application to access the X server or GUI of your host Linux distribution in particular for the time SSJ is running which can be a security or a privacy concern for many.
-+ Audio ouput does not work as of now.
++ SSJ uses Docker's `--privileged` container capabilities and `--net=host` networking. These are known to introduce security risks in production environments. SSJ also adds a universal access control to `xhost` for making GUI applications work, but immidiately closes it once SSJ's `terminator` is exited. This might allow any application to access the X server or GUI of your host Linux distribution in particular for the time SSJ is running which can be a security or a privacy concern for many.
++ Audio input/ouput does not work as of now.
 
 ## Uninstallation
 
