@@ -12,6 +12,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 ## Prerequisites
 + Internet.
++ 15GB of disk space.
 + `git` & `iputils-ping` must be installed.
 + `docker` must be installed and the user must be present in the `docker` group.
 
