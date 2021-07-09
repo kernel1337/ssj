@@ -12,8 +12,8 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 ## Prerequisites
 + Internet.
-+ `curl`, `wget` & `iputils-ping` must be installed.
-+ Docker must be installed and the user must be present in the `docker` group.
++ `git` & `iputils-ping` must be installed.
++ `docker` must be installed and the user must be present in the `docker` group.
 
 ## Installation
 
@@ -21,7 +21,7 @@ SSJ pulls a Docker image that uses [Kali Linux](https://www.kali.org/) base imag
 
 (This takes variable time depending upon your Internet speed. It pulls the Docker image from Docker Hub that weighs around 5GB.)
 
-+ `sudo chown -R 0:0 $HOME/.ssh`
++ `sudo chown -R 0:0 $HOME/.ssj`
 
 + Reboot.
 
