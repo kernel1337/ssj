@@ -2,7 +2,7 @@
 
 function check {
 
-    if ! docker --version >/dev/null; then
+    if ! docker --version &>/dev/null; then
         echo "Docker is not installed. Terminating..."
         exit 1
     fi
@@ -12,12 +12,12 @@ function check {
         exit 1
     fi
 
-    if ! git --version >/dev/null; then
+    if ! git --version &>/dev/null; then
         echo "Git is not installed. Terminating..."
         exit 1
     fi
 
-    if ! ping -q -c 1 -W 1 github.com >/dev/null; then
+    if ! ping -q -c 1 -W 1 github.com &>/dev/null; then
         echo "Could not connect to the Internet. Terminating..."
         exit 1
     fi
